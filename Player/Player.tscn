@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3c3huxm5cfk6"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_cjosm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_letry"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_fr8k6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_calj3"]
+
+[node name="Body" type="CharacterBody3D"]
+rotation_order = 0
+collision_layer = 7
+collision_mask = 7
+safe_margin = 0.2
+script = ExtResource("1_cjosm")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.900322, 0.449036)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_letry")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.86, 0, 0, 0, -3.75918e-08, -0.86, 0, 0.86, -3.75918e-08, 0, -0.181861, 0.331257)
+mesh = SubResource("PrismMesh_fr8k6")
+
+[node name="PlayerCollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_calj3")
